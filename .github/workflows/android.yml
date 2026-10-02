@@ -25,7 +25,8 @@ jobs:
         buildozer init
         sed -i 's/source.include_exts = py/source.include_exts = py,png,txt/' buildozer.spec
         sed -i 's/orientation = portrait/orientation = landscape/' buildozer.spec
-        sed -i 's/requirements = python3,kivy/requirements = python3,pygame,numpy/' buildozer.spec
+        # UPGRADING DRIVERS FROM DEPRECATED PYGAME TO STABLE PYGAME-CE FOR MOBILE SUPPORT
+        sed -i 's/requirements = python3,kivy/requirements = python3,pygame-ce,numpy/' buildozer.spec
         sed -i 's/title = My Application/title = Dino Game/' buildozer.spec
         sed -i 's/package.name = myapp/package.name = dinogame/' buildozer.spec
 
