@@ -1,6 +1,14 @@
+import sys
+# Force modern Pygame CE compilation profile bindings on mobile engines
+import sys
+try:
+    import pygame_ce as pygame
+    sys.modules['pygame'] = pygame
+except ImportError:
+    pass
+
 import pygame as pg
 import numpy as np
-import sys
 import os
 
 # --- CRUCIAL ANDROID PATH & ENVIRONMENT FIXES ---
